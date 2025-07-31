@@ -3,26 +3,12 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all components
-  initPageLoader();
   initNavigation();
   initScrollAnimations();
   initCO2Counter();
   initSmoothScrolling();
   initMobileMenu();
 });
-
-// Page Loader
-function initPageLoader() {
-  const loader = document.getElementById("pageLoader");
-
-  // Simulate loading time
-  setTimeout(() => {
-    loader.classList.add("fade-out");
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 800);
-  }, 1500);
-}
 
 // Navigation functionality
 function initNavigation() {
