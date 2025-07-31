@@ -1,16 +1,27 @@
 // Active Travel CO2 Calculator - JavaScript
 // Modern, clean interactions and animations
 
+let isInitialized = false;
+
 document.addEventListener("DOMContentLoaded", function () {
+  if (isInitialized) return;
+  isInitialized = true;
+
   // Initialize all components
   initNavigation();
   initScrollAnimations();
   initCO2Counter();
   initSmoothScrolling();
   initMobileMenu();
+  initInteractiveEffects();
+  initScrollProgress();
+  createFloatingParticles();
+  observeElements();
 });
 
 // Navigation functionality
+let scrollHandlers = [];
+
 function initNavigation() {
   const navbar = document.getElementById("navbar");
   let lastScrollY = window.scrollY;
@@ -28,7 +39,11 @@ function initNavigation() {
     lastScrollY = currentScrollY;
   }
 
-  window.addEventListener("scroll", handleScroll);
+  const throttledScroll = throttle(handleScroll, 16);
+  window.addEventListener("scroll", throttledScroll);
+  scrollHandlers.push(() =>
+    window.removeEventListener("scroll", throttledScroll)
+  );
 
   // Active link highlighting
   const navLinks = document.querySelectorAll(".nav-link");
@@ -53,7 +68,11 @@ function initNavigation() {
     });
   }
 
-  window.addEventListener("scroll", highlightActiveSection);
+  const throttledHighlight = throttle(highlightActiveSection, 16);
+  window.addEventListener("scroll", throttledHighlight);
+  scrollHandlers.push(() =>
+    window.removeEventListener("scroll", throttledHighlight)
+  );
 }
 
 // Mobile menu toggle
@@ -84,13 +103,19 @@ function initMobileMenu() {
 }
 
 // Scroll animations
+let scrollObserver;
+
 function initScrollAnimations() {
+  if (scrollObserver) {
+    scrollObserver.disconnect();
+  }
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
   };
 
-  const observer = new IntersectionObserver(function (entries) {
+  scrollObserver = new IntersectionObserver(function (entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("animate-in");
@@ -109,16 +134,22 @@ function initScrollAnimations() {
             }, index * 100);
           });
         }
+
+        // Unobserve after animation to prevent memory leaks
+        scrollObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
   // Observe all elements with animation classes
   const animatedElements = document.querySelectorAll(".animate-on-scroll");
-  animatedElements.forEach((el) => observer.observe(el));
+  animatedElements.forEach((el) => scrollObserver.observe(el));
 }
 
 // CO2 Counter Animation
+let co2AnimationId;
+let meterObserver;
+
 function initCO2Counter() {
   const meterValue = document.getElementById("meterValue");
   const progressBar = document.getElementById("progressBar");
@@ -127,9 +158,12 @@ function initCO2Counter() {
 
   const targetValue = 127; // kg CO2 saved
   const animationDuration = 3000; // 3 seconds
-  const startTime = Date.now();
+  let startTime;
+  let isAnimating = false;
 
   function animateCounter() {
+    if (!isAnimating) return;
+
     const elapsed = Date.now() - startTime;
     const progress = Math.min(elapsed / animationDuration, 1);
 
@@ -140,16 +174,29 @@ function initCO2Counter() {
     meterValue.textContent = currentValue;
 
     if (progress < 1) {
-      requestAnimationFrame(animateCounter);
+      co2AnimationId = requestAnimationFrame(animateCounter);
+    } else {
+      isAnimating = false;
     }
   }
 
+  function startAnimation() {
+    if (isAnimating) return;
+    isAnimating = true;
+    startTime = Date.now();
+    animateCounter();
+  }
+
   // Start animation when CO2 meter comes into view
-  const meterObserver = new IntersectionObserver(
+  if (meterObserver) {
+    meterObserver.disconnect();
+  }
+
+  meterObserver = new IntersectionObserver(
     function (entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setTimeout(animateCounter, 500); // Delay for visual effect
+          setTimeout(startAnimation, 500); // Delay for visual effect
           meterObserver.unobserve(entry.target);
         }
       });
@@ -199,7 +246,7 @@ function throttle(func, limit) {
 }
 
 // Add interactive hover effects
-document.addEventListener("DOMContentLoaded", function () {
+function initInteractiveEffects() {
   // Card hover effects
   const cards = document.querySelectorAll(
     ".overview-card, .research-card, .future-card, .team-member"
@@ -234,70 +281,75 @@ document.addEventListener("DOMContentLoaded", function () {
       this.appendChild(ripple);
 
       setTimeout(() => {
-        ripple.remove();
+        if (ripple.parentNode) {
+          ripple.remove();
+        }
       }, 600);
     });
   });
-});
 
-// Add CSS for ripple effect
-const rippleCSS = `
-.btn {
-    position: relative;
-    overflow: hidden;
-}
-
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    transform: scale(0);
-    animation: ripple-animation 0.6s linear;
-    pointer-events: none;
-}
-
-@keyframes ripple-animation {
-    to {
-        transform: scale(4);
-        opacity: 0;
+  // Add CSS for ripple effect (only once)
+  if (!document.querySelector("#ripple-styles")) {
+    const rippleCSS = `
+    .btn {
+        position: relative;
+        overflow: hidden;
     }
-}
-`;
 
-// Inject ripple CSS
-const style = document.createElement("style");
-style.textContent = rippleCSS;
-document.head.appendChild(style);
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+    `;
+
+    // Inject ripple CSS
+    const style = document.createElement("style");
+    style.id = "ripple-styles";
+    style.textContent = rippleCSS;
+    document.head.appendChild(style);
+  }
+}
 
 // Intersection Observer for fade-in animations
-const observeElements = () => {
+let fadeObserver;
+
+function observeElements() {
   const elements = document.querySelectorAll(".animate-fade-up");
 
-  const observer = new IntersectionObserver((entries) => {
+  if (fadeObserver) {
+    fadeObserver.disconnect();
+  }
+
+  fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.style.animationPlayState = "running";
+        fadeObserver.unobserve(entry.target);
       }
     });
   });
 
   elements.forEach((el) => {
     el.style.animationPlayState = "paused";
-    observer.observe(el);
+    fadeObserver.observe(el);
   });
-};
-
-// Run animation observer after DOM is loaded
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", observeElements);
-} else {
-  observeElements();
 }
 
 // Add floating particles animation
 function createFloatingParticles() {
   const particlesContainer = document.querySelector(".floating-particles");
-  if (!particlesContainer) return;
+  if (!particlesContainer || particlesContainer.children.length > 5) return;
 
   // Create additional particles dynamically
   for (let i = 5; i < 15; i++) {
@@ -311,11 +363,13 @@ function createFloatingParticles() {
   }
 }
 
-// Initialize floating particles
-createFloatingParticles();
-
 // Add scroll progress indicator
+let progressScrollHandler;
+
 function initScrollProgress() {
+  // Don't create multiple progress bars
+  if (document.querySelector(".scroll-progress")) return;
+
   const progressBar = document.createElement("div");
   progressBar.className = "scroll-progress";
   progressBar.style.cssText = `
@@ -330,16 +384,36 @@ function initScrollProgress() {
     `;
   document.body.appendChild(progressBar);
 
-  window.addEventListener(
-    "scroll",
-    throttle(() => {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      progressBar.style.width = scrollPercent + "%";
-    }, 10)
+  progressScrollHandler = throttle(() => {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + "%";
+  }, 10);
+
+  window.addEventListener("scroll", progressScrollHandler);
+  scrollHandlers.push(() =>
+    window.removeEventListener("scroll", progressScrollHandler)
   );
 }
 
-// Initialize scroll progress
-initScrollProgress();
+// Cleanup function for page unload
+function cleanup() {
+  // Cancel any ongoing animations
+  if (co2AnimationId) {
+    cancelAnimationFrame(co2AnimationId);
+  }
+
+  // Disconnect observers
+  if (scrollObserver) scrollObserver.disconnect();
+  if (meterObserver) meterObserver.disconnect();
+  if (fadeObserver) fadeObserver.disconnect();
+
+  // Remove scroll handlers
+  scrollHandlers.forEach((cleanup) => cleanup());
+  scrollHandlers = [];
+}
+
+// Add cleanup on page unload
+window.addEventListener("beforeunload", cleanup);
+window.addEventListener("pagehide", cleanup);
