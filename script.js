@@ -1,4 +1,4 @@
-// Active Travel CO2 Calculator - JavaScript
+// Active Travel CO₂ Calculator - JavaScript
 // Modern, clean interactions and animations
 
 let isInitialized = false;
@@ -146,8 +146,8 @@ function initScrollAnimations() {
   animatedElements.forEach((el) => scrollObserver.observe(el));
 }
 
-// CO2 Counter Animation
-let co2AnimationId;
+// CO₂ Counter Animation
+let CO2AnimationId;
 let meterObserver;
 
 function initCO2Counter() {
@@ -156,7 +156,7 @@ function initCO2Counter() {
 
   if (!meterValue || !progressBar) return;
 
-  const targetValue = 127; // kg CO2 saved
+  const targetValue = 127; // kg CO₂ saved
   const animationDuration = 3000; // 3 seconds
   let startTime;
   let isAnimating = false;
@@ -174,7 +174,7 @@ function initCO2Counter() {
     meterValue.textContent = currentValue;
 
     if (progress < 1) {
-      co2AnimationId = requestAnimationFrame(animateCounter);
+      CO2AnimationId = requestAnimationFrame(animateCounter);
     } else {
       isAnimating = false;
     }
@@ -187,7 +187,7 @@ function initCO2Counter() {
     animateCounter();
   }
 
-  // Start animation when CO2 meter comes into view
+  // Start animation when CO₂ meter comes into view
   if (meterObserver) {
     meterObserver.disconnect();
   }
@@ -400,8 +400,8 @@ function initScrollProgress() {
 // Cleanup function for page unload
 function cleanup() {
   // Cancel any ongoing animations
-  if (co2AnimationId) {
-    cancelAnimationFrame(co2AnimationId);
+  if (CO2AnimationId) {
+    cancelAnimationFrame(CO2AnimationId);
   }
 
   // Disconnect observers
