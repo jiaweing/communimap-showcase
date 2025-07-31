@@ -75,60 +75,6 @@ body {
   padding: 0 24px;
 }
 
-/* Page Loader */
-.page-loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 0.8s ease-out;
-}
-
-.page-loader.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.loader-content {
-  text-align: center;
-  color: var(--white);
-}
-
-.loader-circle {
-  width: 60px;
-  height: 60px;
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  border-top: 3px solid var(--white);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 20px;
-}
-
-.loader-content p {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /* Navigation */
 .navbar {
   position: fixed;
@@ -228,6 +174,12 @@ body {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0f9ff 100%);
+}
+
+/* Compact Hero Section for Subpages */
+.hero-section.hero-compact {
+  min-height: 60vh;
+  padding: 120px 0 80px 0;
 }
 
 .hero-background {
@@ -470,6 +422,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .meter-value {
@@ -499,12 +456,12 @@ body {
 
 @keyframes countUp {
   from {
-    transform: translate(-50%, -50%) scale(0.8);
     opacity: 0;
+    transform: scale(0.8);
   }
   to {
-    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -1149,6 +1106,11 @@ body {
     align-items: center;
   }
 
+  .hero-section.hero-compact {
+    min-height: 50vh;
+    padding: 100px 0 60px 0;
+  }
+
   .gallant-info {
     padding: 40px 24px;
   }
@@ -1183,6 +1145,11 @@ body {
     padding: 60px 16px;
     max-width: var(--container-max-width);
     margin: 0 auto;
+  }
+
+  .hero-section.hero-compact {
+    min-height: 40vh;
+    padding: 80px 0 40px 0;
   }
 
   .btn {
