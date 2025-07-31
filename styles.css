@@ -1189,6 +1189,9 @@ body {
 
 /* Hero Content Center */
 .hero-content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
@@ -1196,7 +1199,8 @@ body {
 }
 
 .research-stats,
-.prototype-stats {
+.prototype-stats,
+.process-stats {
   display: flex;
   justify-content: center;
   gap: 48px;
