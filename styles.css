@@ -1720,15 +1720,15 @@ body {
 }
 
 .finding-category.motivation {
-  border-left: 4px solid #10B981;
+  border-left: 4px solid #10b981;
 }
 
 .finding-category.barriers {
-  border-left: 4px solid #F59E0B;
+  border-left: 4px solid #f59e0b;
 }
 
 .finding-category.opportunities {
-  border-left: 4px solid #8B5CF6;
+  border-left: 4px solid #8b5cf6;
 }
 
 .category-header {
@@ -1840,15 +1840,15 @@ body {
 }
 
 .pillar.autonomy {
-  border-top: 4px solid #3B82F6;
+  border-top: 4px solid #3b82f6;
 }
 
 .pillar.competence {
-  border-top: 4px solid #10B981;
+  border-top: 4px solid #10b981;
 }
 
 .pillar.relatedness {
-  border-top: 4px solid #F59E0B;
+  border-top: 4px solid #f59e0b;
 }
 
 .pillar-header {
