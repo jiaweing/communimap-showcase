@@ -371,7 +371,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* CO2 Visualization */
+/* CO₂ Visualization */
 .co2-visualization {
   display: flex;
   justify-content: center;
@@ -5492,6 +5492,18 @@ body {
   padding: 18px 36px;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+/* Fix button colors in CTA section */
+.cta-section .btn-secondary {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-section .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
 }
 
 /* Mobile responsiveness for CTA */
