@@ -466,44 +466,53 @@ body {
 
 .meter-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .meter-value {
-  display: block;
   font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 700;
   color: var(--primary-color);
   animation: countUp 3s ease-out forwards;
+  line-height: 0.9;
+  margin: 0;
+  padding: 0;
 }
 
 .meter-unit {
-  display: block;
   font-size: 1rem;
   color: var(--gray-500);
-  margin-top: -8px;
+  margin: 2px 0 0 0;
+  line-height: 1;
+  padding: 0;
 }
 
 .meter-label {
-  display: block;
   font-size: 0.875rem;
   color: var(--gray-500);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 8px;
+  margin: 6px 0 0 0;
+  line-height: 1;
+  padding: 0;
 }
 
 @keyframes countUp {
   from {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: scale(0.8);
     opacity: 0;
   }
   to {
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -4784,8 +4793,8 @@ body {
 
 .process-number {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 10px;
+  right: 10px;
   background: var(--primary-color);
   color: var(--white);
   width: 32px;
