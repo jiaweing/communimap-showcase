@@ -4743,11 +4743,11 @@ body {
   .video-container {
     margin: 16px 0 12px 0;
   }
-  
+
   .weekly-reflections .bento-card-large {
     min-height: auto;
   }
-  
+
   .bento-grid-2x1 {
     grid-template-columns: 1fr;
   }
