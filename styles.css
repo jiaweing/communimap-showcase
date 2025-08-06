@@ -4855,3 +4855,72 @@ body {
     padding: 24px;
   }
 }
+
+/* Essay Section Styles */
+.essay-reflection {
+  margin-top: 40px;
+}
+
+.essay-card {
+  margin-bottom: 32px;
+}
+
+.essay-content {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.essay-content p {
+  margin-bottom: 24px;
+}
+
+.essay-content strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.challenge-card {
+  background: linear-gradient(135deg, #fff8dc 0%, #ffefef 100%);
+  border-left: 4px solid #f59e0b;
+}
+
+.challenge-card .bento-icon {
+  color: #f59e0b;
+}
+
+.reflection-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.reflection-card .bento-icon {
+  color: var(--secondary-color);
+}
+
+.essay-conclusion {
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--gray-100);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.essay-conclusion p {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .essay-content {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  
+  .essay-content p {
+    margin-bottom: 20px;
+  }
+  
+  .essay-conclusion {
+    padding: 20px;
+  }
+}
