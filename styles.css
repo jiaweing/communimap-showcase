@@ -1197,6 +1197,11 @@ body {
     --section-padding: 80px 0;
   }
 
+  /* Fix hero section mobile padding to clear navbar */
+  .hero-section {
+    padding-top: 80px;
+  }
+
   .nav-menu {
     position: fixed;
     top: 80px;
