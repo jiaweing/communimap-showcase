@@ -87,7 +87,7 @@ Our approach combined multiple research methods to validate our design decisions
 
 ## 🌟 Key Innovations
 
-- **Forest Metaphor Discovery**: Research showed nature-based visualization creates 340% higher engagement than competitive rankings
+- **Forest Metaphor Discovery**: Research with 20 survey participants and 5 interviews showed nature-based visualization creates higher user preference than competitive rankings
 - **Intrinsic Motivation Focus**: Applied Self-Determination Theory to design for autonomous motivation rather than external pressure
 - **Community Integration**: Thoughtful integration with existing CommuniMap platform
 - **Inclusive Design**: Consideration of diverse abilities and transportation access in our solution
