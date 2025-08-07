@@ -328,88 +328,63 @@
             </div>
 
             <div class="prototype-showcase animate-on-scroll delay-3">
-              <div class="mockup-container">
-                <div class="mobile-mockup">
-                  <div class="mockup-screen">
-                    <div class="mockup-header">
-                      <div class="mockup-status-bar">
-                        <span class="time">9:41</span>
-                        <div class="status-icons">
-                          <span class="signal">📶</span>
-                          <span class="battery">🔋</span>
-                        </div>
-                      </div>
-                      <div class="app-header">
-                        <h3>CO₂ Dashboard</h3>
-                        <div class="header-icon">🌱</div>
-                      </div>
-                    </div>
-
-                    <div class="mockup-content">
-                      <div class="daily-summary">
-                        <h4>Today's Impact</h4>
-                        <div class="co2-circle">
-                          <div class="circle-progress">
-                            <svg viewBox="0 0 100 100">
-                              <circle
-                                cx="50"
-                                cy="50"
-                                r="45"
-                                class="progress-bg"
-                              ></circle>
-                              <circle
-                                cx="50"
-                                cy="50"
-                                r="45"
-                                class="progress-fill"
-                              ></circle>
-                            </svg>
-                          </div>
-                          <div class="circle-content">
-                            <span class="co2-value">3.2kg</span>
-                            <span class="co2-label">CO₂ Saved</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="journey-summary">
-                        <h4>Recent Journeys</h4>
-                        <div class="journey-list">
-                          <div class="journey-item">
-                            <span class="journey-icon">🚴</span>
-                            <div class="journey-info">
-                              <span class="journey-route">Home → Work</span>
-                              <span class="journey-savings">1.8kg CO₂</span>
-                            </div>
-                          </div>
-                          <div class="journey-item">
-                            <span class="journey-icon">🚶</span>
-                            <div class="journey-info">
-                              <span class="journey-route">Cafe → Park</span>
-                              <span class="journey-savings">0.7kg CO₂</span>
-                            </div>
-                          </div>
-                          <div class="journey-item">
-                            <span class="journey-icon">🚴</span>
-                            <div class="journey-info">
-                              <span class="journey-route">Shop → Home</span>
-                              <span class="journey-savings">0.7kg CO₂</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="achievement-preview">
-                        <h4>Achievements</h4>
-                        <div class="badge-row">
-                          <div class="achievement-badge earned">🌟</div>
-                          <div class="achievement-badge earned">🚴</div>
-                          <div class="achievement-badge">🏆</div>
-                          <div class="achievement-badge">🌍</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                  gap: 30px;
+                  margin-bottom: 40px;
+                "
+              >
+                <div style="text-align: center">
+                  <h4 style="margin-bottom: 15px; color: var(--dark-900)">
+                    Dashboard Home
+                  </h4>
+                  <img
+                    src="images/prototype/home.png"
+                    alt="Dashboard Home Interface"
+                    style="
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 12px;
+                      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                      border: 1px solid var(--gray-200);
+                    "
+                  />
+                  <p
+                    style="
+                      margin-top: 10px;
+                      color: var(--dark-600);
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Personal CO₂ tracking dashboard with journey history
+                  </p>
+                </div>
+                <div style="text-align: center">
+                  <h4 style="margin-bottom: 15px; color: var(--dark-900)">
+                    User Profile
+                  </h4>
+                  <img
+                    src="images/prototype/profile.png"
+                    alt="User Profile Interface"
+                    style="
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 12px;
+                      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                      border: 1px solid var(--gray-200);
+                    "
+                  />
+                  <p
+                    style="
+                      margin-top: 10px;
+                      color: var(--dark-600);
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Personal achievements and environmental impact visualization
+                  </p>
                 </div>
               </div>
             </div>
@@ -447,99 +422,64 @@
         <div class="container">
           <div class="prototype-detail reverse">
             <div class="prototype-showcase animate-on-scroll delay-1">
-              <div class="desktop-mockup">
-                <div class="mockup-browser">
-                  <div class="browser-header">
-                    <div class="browser-controls">
-                      <span class="control red"></span>
-                      <span class="control yellow"></span>
-                      <span class="control green"></span>
-                    </div>
-                    <div class="address-bar">communimap-CO₂.glasgow.gov</div>
-                  </div>
-                  <div class="browser-content">
-                    <div class="community-dashboard">
-                      <header class="dashboard-header">
-                        <h2>Glasgow Community Impact</h2>
-                        <div class="date-selector">March 2025</div>
-                      </header>
-
-                      <div class="community-stats">
-                        <div class="stat-card large">
-                          <h3>Community Total</h3>
-                          <div class="large-number">2,847kg</div>
-                          <p>CO₂ Saved This Month</p>
-                          <div class="comparison">
-                            <span class="trend up">↗️ +23% vs last month</span>
-                          </div>
-                        </div>
-
-                        <div class="stats-grid">
-                          <div class="stat-card">
-                            <h4>Active Users</h4>
-                            <div class="stat-number">156</div>
-                            <span class="stat-icon">👥</span>
-                          </div>
-                          <div class="stat-card">
-                            <h4>Total Journeys</h4>
-                            <div class="stat-number">1,247</div>
-                            <span class="stat-icon">🚴</span>
-                          </div>
-                          <div class="stat-card">
-                            <h4>Avg. Per Person</h4>
-                            <div class="stat-number">18.3kg</div>
-                            <span class="stat-icon">🌱</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="community-features">
-                        <div class="feature-section">
-                          <h3>Community Challenges</h3>
-                          <div class="challenge-card active">
-                            <div class="challenge-info">
-                              <h4>Car-Free March</h4>
-                              <p>Community goal: 5,000kg CO₂ saved</p>
-                            </div>
-                            <div class="challenge-progress">
-                              <div class="progress-bar">
-                                <div
-                                  class="progress-fill"
-                                  style="width: 57%"
-                                ></div>
-                              </div>
-                              <span class="progress-text">57% Complete</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="feature-section">
-                          <h3>Community Forest</h3>
-                          <div class="forest-garden">
-                            <div class="tree-item flourishing">
-                              <span class="tree-icon">🌳</span>
-                              <span class="community-name">Team Cyclists</span>
-                              <span class="trees-planted">347 trees</span>
-                            </div>
-                            <div class="tree-item growing">
-                              <span class="tree-icon">🌲</span>
-                              <span class="community-name"
-                                >Walking Warriors</span
-                              >
-                              <span class="trees-planted">298 trees</span>
-                            </div>
-                            <div class="tree-item sprouting">
-                              <span class="tree-icon">🌱</span>
-                              <span class="community-name"
-                                >Green Commuters</span
-                              >
-                              <span class="trees-planted">276 trees</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                  gap: 30px;
+                "
+              >
+                <div style="text-align: center">
+                  <h4 style="margin-bottom: 15px; color: var(--dark-900)">
+                    Forest Planting Game
+                  </h4>
+                  <img
+                    src="images/prototype/forest-game.png"
+                    alt="Forest Planting Game Interface"
+                    style="
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 12px;
+                      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                      border: 1px solid var(--gray-200);
+                    "
+                  />
+                  <p
+                    style="
+                      margin-top: 10px;
+                      color: var(--dark-600);
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Interactive forest visualization that grows as users reduce
+                    CO₂ emissions
+                  </p>
+                </div>
+                <div style="text-align: center">
+                  <h4 style="margin-bottom: 15px; color: var(--dark-900)">
+                    Community Comparison
+                  </h4>
+                  <img
+                    src="images/prototype/leaderboard.png"
+                    alt="Community Comparison Interface"
+                    style="
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 12px;
+                      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                      border: 1px solid var(--gray-200);
+                    "
+                  />
+                  <p
+                    style="
+                      margin-top: 10px;
+                      color: var(--dark-600);
+                      font-size: 0.9rem;
+                    "
+                  >
+                    Community engagement through collaborative forest growth
+                    rather than competitive rankings
+                  </p>
                 </div>
               </div>
             </div>
