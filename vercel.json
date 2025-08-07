@@ -1,3 +1,8 @@
 {
-  "rewrites": [{ "source": "/", "destination": "/redirect.html" }]
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "http://jiaweing.github.io/communimap-showcase"
+    }
+  ]
 }
