@@ -5227,6 +5227,10 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   white-space: nowrap;
+  float: right;
+  margin-left: auto;
+  display: block;
+  text-align: right;
 }
 
 .item-content p {
