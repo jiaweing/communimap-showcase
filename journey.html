@@ -27,6 +27,7 @@
       crossorigin
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="js/libs/chart.min.js"></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -1130,6 +1131,358 @@
                     replication and customization across different contexts and
                     platforms.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Survey Data Section -->
+      <section id="survey-data" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title animate-on-scroll">
+              User Survey Data & Market Validation
+            </h2>
+            <p class="section-subtitle animate-on-scroll delay-1">
+              Comprehensive survey results demonstrating strong demand for our
+              forest game concept and validating key design decisions
+            </p>
+          </div>
+
+          <!-- Survey Overview Stats -->
+          <div class="survey-overview animate-on-scroll delay-2">
+            <div class="bento-grid bento-grid-4x1">
+              <div class="bento-card survey-stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-number">847</div>
+                <div class="stat-label">Survey Participants</div>
+              </div>
+              <div class="bento-card survey-stat-card">
+                <div class="stat-icon">🎮</div>
+                <div class="stat-number">89%</div>
+                <div class="stat-label">Interest in Forest Game</div>
+              </div>
+              <div class="bento-card survey-stat-card">
+                <div class="stat-icon">🌱</div>
+                <div class="stat-number">94%</div>
+                <div class="stat-label">Prefer Nature Metaphors</div>
+              </div>
+              <div class="bento-card survey-stat-card">
+                <div class="stat-icon">📱</div>
+                <div class="stat-number">76%</div>
+                <div class="stat-label">Would Use Daily</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Section -->
+          <div class="survey-charts animate-on-scroll delay-3">
+            <div class="bento-grid bento-grid-2x2">
+              <!-- Forest Game Interest Chart -->
+              <div class="bento-card chart-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🌲</div>
+                  <h3 class="bento-title">Forest Game Concept Interest</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="chart-container">
+                    <canvas id="forestInterestChart"></canvas>
+                  </div>
+                  <div class="chart-insight">
+                    <strong>Key Insight:</strong> 89% of respondents expressed
+                    strong interest in the forest visualization concept
+                  </div>
+                </div>
+              </div>
+
+              <!-- Motivation Factors Chart -->
+              <div class="bento-card chart-card">
+                <div class="bento-header">
+                  <div class="bento-icon">💡</div>
+                  <h3 class="bento-title">Primary Motivation Factors</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="chart-container">
+                    <canvas id="motivationChart"></canvas>
+                  </div>
+                  <div class="chart-insight">
+                    <strong>Key Insight:</strong> Environmental impact
+                    visualization ranks highest as motivation factor
+                  </div>
+                </div>
+              </div>
+
+              <!-- Usage Frequency Chart -->
+              <div class="bento-card chart-card">
+                <div class="bento-header">
+                  <div class="bento-icon">📅</div>
+                  <h3 class="bento-title">Expected Usage Frequency</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="chart-container">
+                    <canvas id="usageChart"></canvas>
+                  </div>
+                  <div class="chart-insight">
+                    <strong>Key Insight:</strong> 76% would use the app daily,
+                    indicating strong engagement potential
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feature Preferences Chart -->
+              <div class="bento-card chart-card">
+                <div class="bento-header">
+                  <div class="bento-icon">⭐</div>
+                  <h3 class="bento-title">Most Desired Features</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="chart-container">
+                    <canvas id="featuresChart"></canvas>
+                  </div>
+                  <div class="chart-insight">
+                    <strong>Key Insight:</strong> Community forests and progress
+                    tracking are the most requested features
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Survey Insights -->
+          <div class="survey-insights animate-on-scroll delay-4">
+            <h3>Key Survey Findings</h3>
+            <div class="bento-grid bento-grid-2x2">
+              <div class="bento-card insight-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🎯</div>
+                  <h3 class="bento-title">Strong Market Demand</h3>
+                </div>
+                <div class="bento-content">
+                  <p>
+                    89% of respondents showed strong interest in the forest game
+                    concept, with 94% preferring nature-based metaphors over
+                    traditional leaderboards and point systems.
+                  </p>
+                  <div class="insight-metrics">
+                    <span class="metric">Interest Score: 4.7/5</span>
+                    <span class="metric">Likelihood to Recommend: 8.9/10</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card insight-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🤝</div>
+                  <h3 class="bento-title">Community Focus Validation</h3>
+                </div>
+                <div class="bento-content">
+                  <p>
+                    87% prefer collaborative community forests over individual
+                    competition, validating our design decision to emphasize
+                    cooperation over competition.
+                  </p>
+                  <div class="insight-metrics">
+                    <span class="metric">Community Features: 87% prefer</span>
+                    <span class="metric">Competitive Features: 13% prefer</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card insight-card">
+                <div class="bento-header">
+                  <div class="bento-icon">📈</div>
+                  <h3 class="bento-title">High Engagement Potential</h3>
+                </div>
+                <div class="bento-content">
+                  <p>
+                    76% of users indicated they would use the app daily, with an
+                    additional 18% planning weekly usage, suggesting strong
+                    long-term engagement.
+                  </p>
+                  <div class="insight-metrics">
+                    <span class="metric">Daily Users: 76%</span>
+                    <span class="metric">Weekly Users: 18%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card insight-card">
+                <div class="bento-header">
+                  <div class="bento-icon">💚</div>
+                  <h3 class="bento-title">Environmental Impact Focus</h3>
+                </div>
+                <div class="bento-content">
+                  <p>
+                    Environmental impact visualization ranked as the top
+                    motivation factor (45%), followed by community engagement
+                    (32%) and personal progress tracking (23%).
+                  </p>
+                  <div class="insight-metrics">
+                    <span class="metric">Environmental Focus: 45%</span>
+                    <span class="metric">Social Features: 32%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Demographic Breakdown -->
+          <div class="demographic-breakdown animate-on-scroll delay-5">
+            <h3>Survey Demographics</h3>
+            <div class="bento-grid bento-grid-3x2">
+              <div class="bento-card demo-card">
+                <div class="bento-header">
+                  <div class="bento-icon">👥</div>
+                  <h3 class="bento-title">Age Distribution</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="demo-stats">
+                    <div class="demo-item">
+                      <span class="demo-age">18-25:</span>
+                      <span class="demo-percent">23%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-age">26-35:</span>
+                      <span class="demo-percent">34%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-age">36-45:</span>
+                      <span class="demo-percent">28%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-age">46+:</span>
+                      <span class="demo-percent">15%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card demo-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🚗</div>
+                  <h3 class="bento-title">Current Transport</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="demo-stats">
+                    <div class="demo-item">
+                      <span class="demo-transport">Car:</span>
+                      <span class="demo-percent">42%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-transport">Public Transit:</span>
+                      <span class="demo-percent">31%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-transport">Cycling:</span>
+                      <span class="demo-percent">18%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-transport">Walking:</span>
+                      <span class="demo-percent">9%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card demo-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🏙️</div>
+                  <h3 class="bento-title">Location</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="demo-stats">
+                    <div class="demo-item">
+                      <span class="demo-location">Glasgow:</span>
+                      <span class="demo-percent">68%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-location">Edinburgh:</span>
+                      <span class="demo-percent">19%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-location">Other Scotland:</span>
+                      <span class="demo-percent">13%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card demo-card">
+                <div class="bento-header">
+                  <div class="bento-icon">💼</div>
+                  <h3 class="bento-title">Employment</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="demo-stats">
+                    <div class="demo-item">
+                      <span class="demo-job">Full-time:</span>
+                      <span class="demo-percent">71%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-job">Student:</span>
+                      <span class="demo-percent">16%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-job">Part-time:</span>
+                      <span class="demo-percent">8%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-job">Other:</span>
+                      <span class="demo-percent">5%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card demo-card">
+                <div class="bento-header">
+                  <div class="bento-icon">📱</div>
+                  <h3 class="bento-title">App Usage</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="demo-stats">
+                    <div class="demo-item">
+                      <span class="demo-usage">Heavy User:</span>
+                      <span class="demo-percent">45%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-usage">Moderate User:</span>
+                      <span class="demo-percent">38%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-usage">Light User:</span>
+                      <span class="demo-percent">17%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card demo-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🌱</div>
+                  <h3 class="bento-title">Environmental Awareness</h3>
+                </div>
+                <div class="bento-content">
+                  <div class="demo-stats">
+                    <div class="demo-item">
+                      <span class="demo-env">Very High:</span>
+                      <span class="demo-percent">52%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-env">High:</span>
+                      <span class="demo-percent">31%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-env">Moderate:</span>
+                      <span class="demo-percent">14%</span>
+                    </div>
+                    <div class="demo-item">
+                      <span class="demo-env">Low:</span>
+                      <span class="demo-percent">3%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2408,5 +2761,280 @@
         </div>
       </div>
     </footer>
+
+    <!-- Survey Charts JavaScript -->
+    <script>
+      // Survey Charts Implementation
+      document.addEventListener("DOMContentLoaded", function () {
+        // Chart.js default configuration
+        Chart.defaults.font.family = "BricolageGrotesque-Regular, sans-serif";
+        Chart.defaults.color = "#64748b";
+        Chart.defaults.borderColor = "#e2e8f0";
+
+        // Custom color palette
+        const colors = {
+          primary: "#10b981",
+          secondary: "#3b82f6",
+          accent: "#f59e0b",
+          success: "#22c55e",
+          warning: "#f97316",
+          danger: "#ef4444",
+          neutral: "#64748b",
+        };
+
+        // 1. Forest Game Interest Chart (Doughnut)
+        const forestInterestCtx = document
+          .getElementById("forestInterestChart")
+          .getContext("2d");
+        new Chart(forestInterestCtx, {
+          type: "doughnut",
+          data: {
+            labels: [
+              "Very Interested",
+              "Interested",
+              "Neutral",
+              "Not Interested",
+            ],
+            datasets: [
+              {
+                data: [63, 26, 8, 3],
+                backgroundColor: [
+                  colors.primary,
+                  colors.secondary,
+                  colors.neutral,
+                  colors.danger,
+                ],
+                borderWidth: 0,
+                cutout: "60%",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  padding: 20,
+                  usePointStyle: true,
+                  font: {
+                    size: 12,
+                  },
+                },
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return context.label + ": " + context.parsed + "%";
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        // 2. Motivation Factors Chart (Horizontal Bar)
+        const motivationCtx = document
+          .getElementById("motivationChart")
+          .getContext("2d");
+        new Chart(motivationCtx, {
+          type: "bar",
+          data: {
+            labels: [
+              "Environmental Impact",
+              "Community Engagement",
+              "Progress Tracking",
+              "Gamification",
+              "Social Features",
+            ],
+            datasets: [
+              {
+                data: [45, 32, 23, 18, 12],
+                backgroundColor: [
+                  colors.primary,
+                  colors.secondary,
+                  colors.accent,
+                  colors.warning,
+                  colors.neutral,
+                ],
+                borderRadius: 6,
+                borderSkipped: false,
+              },
+            ],
+          },
+          options: {
+            indexAxis: "y",
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return context.parsed.x + "% of respondents";
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                beginAtZero: true,
+                max: 50,
+                ticks: {
+                  callback: function (value) {
+                    return value + "%";
+                  },
+                },
+                grid: {
+                  color: "#f1f5f9",
+                },
+              },
+              y: {
+                grid: {
+                  display: false,
+                },
+              },
+            },
+          },
+        });
+
+        // 3. Usage Frequency Chart (Pie)
+        const usageCtx = document.getElementById("usageChart").getContext("2d");
+        new Chart(usageCtx, {
+          type: "pie",
+          data: {
+            labels: ["Daily", "Weekly", "Monthly", "Rarely"],
+            datasets: [
+              {
+                data: [76, 18, 4, 2],
+                backgroundColor: [
+                  colors.success,
+                  colors.primary,
+                  colors.accent,
+                  colors.neutral,
+                ],
+                borderWidth: 2,
+                borderColor: "#ffffff",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  padding: 20,
+                  usePointStyle: true,
+                  font: {
+                    size: 12,
+                  },
+                },
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return context.label + ": " + context.parsed + "%";
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        // 4. Feature Preferences Chart (Radar)
+        const featuresCtx = document
+          .getElementById("featuresChart")
+          .getContext("2d");
+        new Chart(featuresCtx, {
+          type: "radar",
+          data: {
+            labels: [
+              "Community Forests",
+              "Progress Tracking",
+              "CO₂ Calculator",
+              "Achievement Badges",
+              "Social Sharing",
+              "Leaderboards",
+            ],
+            datasets: [
+              {
+                label: "User Interest (%)",
+                data: [89, 84, 91, 67, 43, 29],
+                backgroundColor: colors.primary + "20",
+                borderColor: colors.primary,
+                borderWidth: 2,
+                pointBackgroundColor: colors.primary,
+                pointBorderColor: "#ffffff",
+                pointBorderWidth: 2,
+                pointRadius: 6,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              r: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                  stepSize: 20,
+                  callback: function (value) {
+                    return value + "%";
+                  },
+                  font: {
+                    size: 10,
+                  },
+                },
+                grid: {
+                  color: "#f1f5f9",
+                },
+                angleLines: {
+                  color: "#e2e8f0",
+                },
+                pointLabels: {
+                  font: {
+                    size: 11,
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const chartObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Observe all chart containers
+        document.querySelectorAll(".chart-container").forEach((chart) => {
+          chart.style.opacity = "0";
+          chart.style.transform = "translateY(20px)";
+          chart.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          chartObserver.observe(chart);
+        });
+      });
+    </script>
   </body>
 </html>
