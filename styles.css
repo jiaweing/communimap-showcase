@@ -1199,7 +1199,8 @@ body {
 
   /* Fix hero section mobile padding to clear navbar */
   .hero-section {
-    padding-top: 80px;
+    padding-top: 80px !important;
+    min-height: calc(100vh - 80px);
   }
 
   .nav-menu {
