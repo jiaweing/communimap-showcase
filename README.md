@@ -70,7 +70,7 @@ This website includes all required coursework elements with A1-level depth and r
 
 ### ✅ **Critical Reflection & Honest Assessment**
 
-- **What We're Proud Of Page**: Comprehensive essay examining achievements, challenges overcome, and genuine learning outcomes
+- **What We're Proud Of Page**: Comprehensive essay examining achievements, challenges overcome, and genuine design innovation learning outcomes
 - **Wider Context Analysis**: Examination of solution within broader environmental, social, and technological contexts
 - **Future Implications**: Analysis of contribution to design practice, research methodology, and systemic environmental awareness
 
@@ -155,7 +155,7 @@ communimap-showcase/
 - ✅ Deep engagement with subject matter and evidence obtained through systematic research
 - ✅ Critical analysis of methodology strengths and limitations with actionable insights
 - ✅ Multiple perspectives including policy, social justice, academic, and environmental contexts
-- ✅ Honest assessment of challenges overcome and genuine learning outcomes
+- ✅ Honest assessment of challenges overcome and genuine design innovation learning outcomes
 
 ## 📊 Project Impact & Contributions
 
@@ -176,7 +176,7 @@ communimap-showcase/
 
 **Assessment Submission**: This website demonstrates A1-level excellence across all required criteria: methodological practice, presentation quality, and reflective depth. The comprehensive documentation and innovative solution represent significant contribution to environmental technology design and behavior change research.
 
-- **Academic Learning**: Integration of psychology and technology design
+- **Design Innovation Learning**: Integration of psychology and technology design
 - **Future Applications**: Scalable model for environmental engagement
 
 ## 📞 Contact
@@ -192,4 +192,4 @@ This project is developed for academic assessment purposes as part of the Univer
 
 ---
 
-**Note**: This website demonstrates the complete design thinking process for developing sustainable transportation technology, showcasing research, prototyping, and reflection methodologies learned through the course.
+**Note**: This website demonstrates the complete design innovation thinking process for developing sustainable transportation technology, showcasing research, prototyping, and reflection methodologies learned through the design innovation course.
