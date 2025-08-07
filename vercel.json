@@ -2,7 +2,8 @@
   "rewrites": [
     {
       "source": "*",
-      "destination": "http://jiaweing.github.io/communimap-showcase"
+      "destination": "http://jiaweing.github.io/communimap-showcase",
+      "permanent": true
     }
   ]
 }
