@@ -4940,3 +4940,128 @@ body {
     padding: 20px;
   }
 }
+
+/* Portfolio Page Styles */
+.portfolio-items {
+  margin-bottom: 80px;
+}
+
+.portfolio-items h3 {
+  font-size: 2rem;
+  color: var(--dark-900);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.portfolio-items .bento-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.portfolio-items .bento-card a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.survey-results {
+  margin-bottom: 80px;
+}
+
+.survey-results h3 {
+  font-size: 2rem;
+  color: var(--dark-900);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.chart-container {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition-smooth);
+}
+
+.chart-container:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.chart-container h4 {
+  font-size: 1.25rem;
+  color: var(--dark-900);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.chart-description {
+  color: var(--gray-500);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 300px !important;
+  min-height: 250px;
+}
+
+/* Mobile Responsiveness for Charts */
+@media (max-width: 768px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .chart-container {
+    padding: 20px;
+  }
+  
+  .chart-container h4 {
+    font-size: 1.1rem;
+  }
+  
+  .chart-description {
+    font-size: 0.85rem;
+  }
+  
+  .portfolio-items h3,
+  .survey-results h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Additional Bento Card Styles for Portfolio */
+.bento-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bento-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.bento-card li:last-child {
+  border-bottom: none;
+}
+
+/* Chart Color Customization */
+.chart-container {
+  --chart-primary: #27AE60;
+  --chart-secondary: #3498DB;
+  --chart-accent: #F39C12;
+  --chart-danger: #E74C3C;
+  --chart-purple: #9B59B6;
+  --chart-orange: #E67E22;
+}

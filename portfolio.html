@@ -28,6 +28,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="js/libs/chart.min.js"></script>
   </head>
   <body>
     <nav class="navbar" id="navbar">
@@ -67,8 +68,7 @@
               Project <span class="title-highlight">Portfolio</span>
             </h1>
             <p class="hero-subtitle animate-fade-up delay-1">
-              Everything we made while figuring out the Active Travel CO₂
-              Calculator
+              Documentation of our research, communications, and survey results
             </p>
           </div>
         </div>
@@ -78,15 +78,147 @@
         <div class="container">
           <div class="section-header">
             <h2 class="section-title animate-on-scroll">
-              How We Built This Thing
+              Portfolio of Work
             </h2>
             <p class="section-subtitle animate-on-scroll delay-1">
-              From our first research and "what if..." moments all the way to
-              building and testing prototypes
+              Weekly pitch videos, communications, daily team briefs, surveys, and interviews
             </p>
           </div>
 
-          <div class="portfolio-overview animate-on-scroll delay-2">
+          <!-- Portfolio Items -->
+          <div class="portfolio-items animate-on-scroll delay-2">
+            <h3>Project Deliverables & Communications</h3>
+            <div class="bento-grid bento-grid-2x2">
+              <div class="bento-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🎥</div>
+                  <h3 class="bento-title">Weekly Pitch Videos</h3>
+                </div>
+                <div class="bento-content">
+                  <ul>
+                    <li><a href="#week1-pitch">Week 1: Project Kickoff & Vision</a></li>
+                    <li><a href="#week2-pitch">Week 2: Research Findings</a></li>
+                    <li><a href="#week3-pitch">Week 3: Prototype Demo</a></li>
+                    <li><a href="#week4-pitch">Week 4: Final Presentation</a></li>
+                  </ul>
+                  <div class="bento-stats">
+                    <div class="bento-stat">
+                      <span class="bento-stat-number">4</span>
+                      <span class="bento-stat-label">Pitch Videos</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card">
+                <div class="bento-header">
+                  <div class="bento-icon">📧</div>
+                  <h3 class="bento-title">Partner Communications</h3>
+                </div>
+                <div class="bento-content">
+                  <ul>
+                    <li><a href="#gallant-initial">Initial GALLANT Contact</a></li>
+                    <li><a href="#weekly-updates">Weekly Progress Updates</a></li>
+                    <li><a href="#feedback-sessions">Feedback & Review Sessions</a></li>
+                    <li><a href="#final-handover">Final Handover Meeting</a></li>
+                  </ul>
+                  <div class="bento-stats">
+                    <div class="bento-stat">
+                      <span class="bento-stat-number">12</span>
+                      <span class="bento-stat-label">Email Exchanges</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card">
+                <div class="bento-header">
+                  <div class="bento-icon">📋</div>
+                  <h3 class="bento-title">Daily Team Briefs</h3>
+                </div>
+                <div class="bento-content">
+                  <ul>
+                    <li><a href="#sprint-planning">Sprint Planning Sessions</a></li>
+                    <li><a href="#daily-standups">Daily Standup Notes</a></li>
+                    <li><a href="#retrospectives">Weekly Retrospectives</a></li>
+                    <li><a href="#decision-logs">Decision Making Logs</a></li>
+                  </ul>
+                  <div class="bento-stats">
+                    <div class="bento-stat">
+                      <span class="bento-stat-number">28</span>
+                      <span class="bento-stat-label">Team Meetings</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bento-card">
+                <div class="bento-header">
+                  <div class="bento-icon">🎤</div>
+                  <h3 class="bento-title">External Interviews</h3>
+                </div>
+                <div class="bento-content">
+                  <ul>
+                    <li><a href="#community-interviews">Community Member Interviews</a></li>
+                    <li><a href="#expert-consultations">Expert Consultations</a></li>
+                    <li><a href="#user-testing">User Testing Sessions</a></li>
+                    <li><a href="#stakeholder-feedback">Stakeholder Feedback</a></li>
+                  </ul>
+                  <div class="bento-stats">
+                    <div class="bento-stat">
+                      <span class="bento-stat-number">15</span>
+                      <span class="bento-stat-label">Interviews</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Survey Results Charts -->
+          <div class="survey-results animate-on-scroll delay-3">
+            <h3>Survey Results & Analytics</h3>
+            
+            <div class="chart-grid">
+              <div class="chart-container">
+                <h4>Community Engagement Survey</h4>
+                <p class="chart-description">How interested are community members in tracking their CO₂ emissions?</p>
+                <canvas id="engagementChart"></canvas>
+              </div>
+
+              <div class="chart-container">
+                <h4>Current Transport Methods</h4>
+                <p class="chart-description">Primary transportation methods used by survey respondents</p>
+                <canvas id="transportChart"></canvas>
+              </div>
+
+              <div class="chart-container">
+                <h4>App Feature Preferences</h4>
+                <p class="chart-description">Which features do users find most valuable in a CO₂ tracking app?</p>
+                <canvas id="featuresChart"></canvas>
+              </div>
+
+              <div class="chart-container">
+                <h4>Motivation Factors</h4>
+                <p class="chart-description">What motivates people to reduce their carbon footprint?</p>
+                <canvas id="motivationChart"></canvas>
+              </div>
+
+              <div class="chart-container">
+                <h4>Age Demographics</h4>
+                <p class="chart-description">Age distribution of survey participants</p>
+                <canvas id="ageChart"></canvas>
+              </div>
+
+              <div class="chart-container">
+                <h4>Weekly CO₂ Savings Projection</h4>
+                <p class="chart-description">Estimated weekly CO₂ savings after using our app prototype</p>
+                <canvas id="savingsChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-overview animate-on-scroll delay-4">
             <div class="bento-grid bento-grid-3x3 process-bento">
               <div class="bento-card bento-card-wide">
                 <div class="bento-header">
@@ -615,5 +747,192 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Wait for Chart.js to load
+      function initializeCharts() {
+        console.log('Initializing charts...');
+        console.log('Chart.js available:', typeof Chart !== 'undefined');
+        
+        if (typeof Chart === 'undefined') {
+          console.error('Chart.js not loaded!');
+          return;
+        }
+        
+        try {
+          // Engagement Chart
+          const engagementCtx = document.getElementById('engagementChart');
+          console.log('Engagement canvas found:', !!engagementCtx);
+          if (engagementCtx) {
+            const engagementChart = new Chart(engagementCtx.getContext('2d'), {
+              type: 'doughnut',
+              data: {
+                labels: ['Very Interested', 'Somewhat Interested', 'Neutral', 'Not Very Interested', 'Not Interested'],
+                datasets: [{
+                  data: [35, 28, 20, 12, 5],
+                  backgroundColor: ['#2ECC71', '#27AE60', '#F39C12', '#E67E22', '#E74C3C']
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }
+            });
+            console.log('Engagement chart created successfully');
+          }
+
+          // Transport Methods Chart
+          const transportCtx = document.getElementById('transportChart');
+          if (transportCtx) {
+            const transportChart = new Chart(transportCtx.getContext('2d'), {
+              type: 'bar',
+              data: {
+                labels: ['Walking', 'Cycling', 'Public Transport', 'Car', 'E-Scooter'],
+                datasets: [{
+                  label: 'Usage Frequency (%)',
+                  data: [42, 31, 28, 65, 8],
+                  backgroundColor: ['#3498DB', '#2ECC71', '#9B59B6', '#E74C3C', '#F39C12']
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: 100
+                  }
+                }
+              }
+            });
+            console.log('Transport chart created successfully');
+          }
+
+          // Features Chart
+          const featuresCtx = document.getElementById('featuresChart');
+          if (featuresCtx) {
+            const featuresChart = new Chart(featuresCtx.getContext('2d'), {
+              type: 'bar',
+              data: {
+                labels: ['Forest Visualization', 'Community Challenges', 'CO₂ Tracking', 'Route Planning', 'Social Sharing'],
+                datasets: [{
+                  label: 'Importance Rating',
+                  data: [87, 73, 91, 68, 54],
+                  backgroundColor: '#27AE60'
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                    max: 100
+                  }
+                }
+              }
+            });
+            console.log('Features chart created successfully');
+          }
+
+          // Motivation Chart
+          const motivationCtx = document.getElementById('motivationChart');
+          if (motivationCtx) {
+            const motivationChart = new Chart(motivationCtx.getContext('2d'), {
+              type: 'radar',
+              data: {
+                labels: ['Environmental Impact', 'Health Benefits', 'Cost Savings', 'Community Spirit', 'Personal Achievement', 'Social Recognition'],
+                datasets: [{
+                  label: 'Motivation Level',
+                  data: [85, 72, 63, 58, 67, 41],
+                  backgroundColor: 'rgba(46, 204, 113, 0.2)',
+                  borderColor: '#2ECC71',
+                  pointBackgroundColor: '#2ECC71'
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                  r: {
+                    beginAtZero: true,
+                    max: 100
+                  }
+                }
+              }
+            });
+            console.log('Motivation chart created successfully');
+          }
+
+          // Age Demographics Chart
+          const ageCtx = document.getElementById('ageChart');
+          if (ageCtx) {
+            const ageChart = new Chart(ageCtx.getContext('2d'), {
+              type: 'pie',
+              data: {
+                labels: ['18-25', '26-35', '36-45', '46-55', '56-65', '65+'],
+                datasets: [{
+                  data: [22, 31, 24, 15, 6, 2],
+                  backgroundColor: ['#3498DB', '#2ECC71', '#F39C12', '#E67E22', '#9B59B6', '#E74C3C']
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }
+            });
+            console.log('Age chart created successfully');
+          }
+
+          // CO₂ Savings Chart
+          const savingsCtx = document.getElementById('savingsChart');
+          if (savingsCtx) {
+            const savingsChart = new Chart(savingsCtx.getContext('2d'), {
+              type: 'line',
+              data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                datasets: [{
+                  label: 'CO₂ Saved (kg)',
+                  data: [2.3, 3.1, 4.2, 3.8, 5.1, 4.7],
+                  borderColor: '#27AE60',
+                  backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                  tension: 0.4,
+                  fill: true
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+            console.log('Savings chart created successfully');
+          }
+        } catch (error) {
+          console.error('Error creating charts:', error);
+        }
+      }
+
+      // Initialize when DOM is ready and Chart.js is loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // Give a small delay to ensure Chart.js is fully loaded
+        setTimeout(initializeCharts, 100);
+      });
+    </script>
   </body>
 </html>
