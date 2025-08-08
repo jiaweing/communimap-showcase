@@ -10300,6 +10300,15 @@ body {
   transform: translateY(-2px);
 }
 
+.nav-item.active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item.active .nav-label {
+  font-weight: 700;
+}
+
 .nav-icon {
   font-size: 2rem;
   margin-bottom: 8px;
