@@ -11148,6 +11148,12 @@ body {
 
 
 /* Integration Architecture Redesigned Styles */
+
+/* Fix: remove green glow behind numbered circles in Journey timeline */
+.process-timeline .phase-number {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
 .architecture-redesigned {
   margin-bottom: 64px;
 }
