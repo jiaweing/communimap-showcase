@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollProgress();
   createFloatingParticles();
   observeElements();
+  initReflectionNavigation(); // Add reflection page navigation
 });
 
 // Navigation functionality
@@ -395,6 +396,84 @@ function initScrollProgress() {
   scrollHandlers.push(() =>
     window.removeEventListener("scroll", progressScrollHandler)
   );
+}
+
+// Reflection page navigation
+function initReflectionNavigation() {
+  const navLinks = document.querySelectorAll(".nav-link[data-reflect]");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+}
+
+// Reflection page navigation functionality
+function initReflectionNavigation() {
+  const reflectionNavItems = document.querySelectorAll('.reflection-nav .nav-item');
+  
+  if (reflectionNavItems.length === 0) return; // Exit if not on reflection page
+  
+  reflectionNavItems.forEach(navItem => {
+    navItem.addEventListener('click', function() {
+      const sectionId = this.getAttribute('data-section');
+      const targetSection = document.getElementById(sectionId);
+      
+      if (targetSection) {
+        // Remove active state from all nav items
+        reflectionNavItems.forEach(item => item.classList.remove('active'));
+        
+        // Add active state to clicked nav item
+        this.classList.add('active');
+        
+        // Smooth scroll to target section
+        const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+        
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Update active nav item based on scroll position
+  function updateActiveReflectionNav() {
+    const scrollPos = window.scrollY + 150; // Offset for better UX
+    
+    reflectionNavItems.forEach(navItem => {
+      const sectionId = navItem.getAttribute('data-section');
+      const section = document.getElementById(sectionId);
+      
+      if (section) {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+          reflectionNavItems.forEach(item => item.classList.remove('active'));
+          navItem.classList.add('active');
+        }
+      }
+    });
+  }
+  
+  // Throttled scroll listener for performance
+  const throttledReflectionNav = throttle(updateActiveReflectionNav, 16);
+  window.addEventListener('scroll', throttledReflectionNav);
+  scrollHandlers.push(() => window.removeEventListener('scroll', throttledReflectionNav));
 }
 
 // Cleanup function for page unload
